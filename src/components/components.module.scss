@@ -8,7 +8,8 @@
 .header_wrap{
     .content{
         padding: 0;
-        margin: 0 10vw;
+        margin: 0;
+        padding: 0 15vh;
     }
     .site-heading{
         margin: 1vh 0;
@@ -62,19 +63,19 @@
 // ---footer--- //
 .footer_wrap{
     background-color:#343a40;
-    height: 10vh;
-    margin-top: 30px;
+    height: 5rem;
+    margin-top: 1rem;
     .content{
         padding: 0;
-        margin: 0 2vw;
+        margin: 0;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: baseline;
     }
     .site-footing{
-        margin: 1vh 0;
-        padding: 25px;
+        margin: 1vh 0 0 0;
+        padding-top: 25px;
         color: black;
     }
     .site-footing p{

@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Sidebar from '../components/linkInBlogItem'
+import Sidebar from '../components/sidebar'
 import { Container, Button, Row, Col } from 'react-bootstrap'
 import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -32,8 +32,10 @@ function BlogDetail(props) {
       ),
       [BLOCKS.HEADING_4]: (node, children) => {
         links.push(
-          {id: children[0].split('_')[0],
-           text: children[0].split('_')[1]})
+          {
+            id: children[0].split('_')[0],
+            text: children[0].split('_')[1]
+          })
         return <h4 id={children[0].split('_')[0]}>{children[0].split('_')[1]}</h4>
       },
       "embedded-asset-block": (node) => {
@@ -46,16 +48,17 @@ function BlogDetail(props) {
   }
   return (
     <Layout>
-      <Container style={{ maxWidth: "auto" }} className="pt-4">
-        <Row>
-          <Col>
+      <Container fluid style={{ padding: "30px"}}>
+        <Row >
+          <Col ></Col>
+          <Col xs={8}>
             <h1>{props.data.contentfulBlogPost.title}</h1>
             {/* <p>{props.data.contentfulBlogPost.createdDate}</p> */}
             {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
           </Col>
-          <Col>
+          <Col >
             <Container>
-              <Sidebar title={props.data.contentfulBlogPost.title} links={links}/>
+              <Sidebar title={props.data.contentfulBlogPost.title} links={links} />
             </Container>
           </Col>
         </Row>

@@ -1,31 +1,8 @@
 import React from "react"
-// import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import { Container, Card, Button } from "react-bootstrap"
 
 const IndexPage = () => {
-  // const data = useStaticQuery(graphql`
-  //   query{
-  //     allContentfulBlogPost(sort:{
-  //       fields:createdDate,
-  //       order: DESC
-  //     }){
-  //       edges{
-  //         node{
-  //           title
-  //           slug
-  //           createdDate(formatString:"YYYY/MM/DD")
-  //           thumbnail{
-  //             fluid{
-  //               src
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <Layout>
         <Container >
