@@ -1,17 +1,24 @@
 import React from 'react'
+import Style from './components.module.scss'
 
 function Slider(props) {
-    return(
-        <div className="">
-            <p>{props.title}</p>
-            <ul className=''>
-                {props.links.map((item, i) => {
-                    return <li key={i} className=''>
-                        <a href={`#${item.id}`} key={i}>{item.text}</a>
-                    </li>
-                })}
+    return (
+        <div className={Style.sidebar_wrap}>
+            <ul className={Style.ul}>
+                <li>
+                    <a href="">{props.title}</a>
+                </li>
+                <li>
+                    <ul className={Style.sidebar_wrap}>
+                        {props.links.map((item, i) => {
+                            return <li key={i} className=''>
+                                <a href={`#${item.id}`} key={i}>{item.text}</a>
+                            </li>
+                        })}
+                    </ul>
+                </li>
             </ul>
-        </div>
+        </div >
     );
 }
 

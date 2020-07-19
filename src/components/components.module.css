@@ -97,4 +97,19 @@
   color: white;
   margin: 0;
 }
+
+.sidebar_wrap {
+  font-size: large;
+  border-left: #343a40;
+  padding-bottom: 20px;
+}
+
+.sidebar_wrap .ul {
+  border-left: 1px solid #ececec;
+  padding-left: 20px;
+}
+
+.sidebar_wrap .ul li {
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=components.module.css.map */

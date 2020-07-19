@@ -48,18 +48,15 @@ function BlogDetail(props) {
   }
   return (
     <Layout>
-      <Container fluid style={{ padding: "30px"}}>
+      <Container fluid style={{ padding: "30px" }}>
         <Row >
           <Col ></Col>
           <Col xs={8}>
             <h1>{props.data.contentfulBlogPost.title}</h1>
-            {/* <p>{props.data.contentfulBlogPost.createdDate}</p> */}
             {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
           </Col>
           <Col >
-            <Container>
-              <Sidebar title={props.data.contentfulBlogPost.title} links={links} />
-            </Container>
+            <Sidebar title={props.data.contentfulBlogPost.title} links={links} />
           </Col>
         </Row>
       </Container>
