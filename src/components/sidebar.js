@@ -6,7 +6,7 @@ function Slider(props) {
         <div className={Style.sidebar_wrap}>
             <ul className={Style.ul}>
                 <li>
-                    <a href="">{props.title}</a>
+                    <a href='/'>{props.title}</a>
                 </li>
                 <li>
                     <ul className={Style.sidebar_wrap}>

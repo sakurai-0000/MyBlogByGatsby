@@ -32,6 +32,9 @@
 .nav_wrap{
     margin: 0;
     padding: 0;
+    position:sticky;
+    top:0;
+    z-index: 100;
     .content{
         margin: 0;
         padding: 0;
@@ -91,6 +94,9 @@
     font-size: large;
     border-left: #343a40;
     padding-bottom: 20px;
+    position:sticky; //スクロール時固定
+    top:5rem; //いい感じの位置
+    z-index: 100;
     .ul{
         border-left:1px solid #ececec;
         padding-left: 20px;
