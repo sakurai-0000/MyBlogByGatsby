@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import Style from './components.module.scss'
+import Style from './layout.module.scss'
 function Header() {
     return (
         <div className={Style.header_wrap}>

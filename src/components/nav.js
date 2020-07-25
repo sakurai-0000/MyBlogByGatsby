@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Nav, NavDropdown, } from 'react-bootstrap';
-import Style from './components.module.scss'
+import Style from './layout.module.scss'
 
 const Example = (props) => {
     return (
@@ -13,11 +13,9 @@ const Example = (props) => {
                         <Nav className={Style.nav}>
                             <NavDropdown title="Code" id="basic-nav-dropdown">
                                 <div className={Style.navDropdown}>
-                                    <NavDropdown.Item href="/blog/blog-001">Gatsby</NavDropdown.Item>
-                                    <NavDropdown.Item href="/blog/blog-002">React/Redux</NavDropdown.Item>
-                                    <NavDropdown.Item href="/blog/blog-003">AWS</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="/gatsby">Code</NavDropdown.Item>
+                                    <NavDropdown.Item href="/code/gatsby/">Gatsby</NavDropdown.Item>
+                                    <NavDropdown.Item href="/code/react-redux/">React/Redux</NavDropdown.Item>
+                                    <NavDropdown.Item href="/code/aws/">AWS</NavDropdown.Item>
                                 </div>
                             </NavDropdown>
                             <NavDropdown title="Travel" id="basic-nav-dropdown">
@@ -29,13 +27,9 @@ const Example = (props) => {
                                     <NavDropdown.Item href="/">Travel</NavDropdown.Item>
                                 </div>
                             </NavDropdown>
-                            <NavDropdown title="Life" id="basic-nav-dropdown">
+                            <NavDropdown title="Blog" id="basic-nav-dropdown">
                                 <div className={Style.navDropdown}>
-                                    <NavDropdown.Item href="/">sample1</NavDropdown.Item>
-                                    <NavDropdown.Item href="/">sample2</NavDropdown.Item>
-                                    <NavDropdown.Item href="/">sample3</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="/practice">Life</NavDropdown.Item>
+                                    <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
                                 </div>
                             </NavDropdown>
                         </Nav>

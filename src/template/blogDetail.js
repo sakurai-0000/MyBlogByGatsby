@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Sidebar from '../components/sidebar'
 import { Container, Button, Row, Col } from 'react-bootstrap'
@@ -7,16 +7,23 @@ import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export const query = graphql`
-  query($slug: String!){
-    contentfulBlogPost(slug: {eq: $slug}){
+query ($slug: String!) {
+    contentfulBlogPost(slug: {eq: $slug}) {
       title
+      createdDateJP:createdDate(formatString: "YYYY年MM月DD日")
       createdDate
-      body{
+      body {
         json
+      }
+      category {
+        category
+        categorySlug
+        id
       }
     }
   }
 `
+
 function BlogDetail(props) {
   let links = [];
   const options = {
@@ -53,6 +60,18 @@ function BlogDetail(props) {
           <Col ></Col>
           <Col xs={8}>
             <h1>{props.data.contentfulBlogPost.title}</h1>
+            <aside className="info">
+              <time dateTime={props.data.contentfulBlogPost.createdDate}>
+                {props.data.contentfulBlogPost.createdDateJP}
+              </time>
+            </aside>
+            <ul>
+              {props.data.contentfulBlogPost.category.map(x => (
+                <li className={x.categorySlug} key={x.id}>
+                  <Link to={`code/${x.categorySlug}/`}>{x.category}</Link>
+                </li>
+              ))}
+            </ul>
             {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
           </Col>
           <Col >
@@ -63,6 +82,23 @@ function BlogDetail(props) {
       <Container className="text-center">
         <Button href="/" variant="outline-info">一覧へ戻る</Button>
       </Container>
+
+      <ul className="postlink">
+        {props.pageContext.next && (
+          <li className="prev">
+            <Link to={`/blog/${props.pageContext.next.slug}`} rel='prev'>
+              <span>{props.pageContext.next.title} </span>
+            </Link>
+          </li>
+        )}
+        {props.pageContext.previous && (
+          <li className="next">
+            <Link to={`/blog/${props.pageContext.previous.slug}`} rel='next'>
+              <span>{props.pageContext.previous.title} </span>
+            </Link>
+          </li>
+        )}
+      </ul>
     </Layout>
   )
 }

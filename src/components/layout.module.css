@@ -36,6 +36,10 @@
 .nav_wrap {
   margin: 0;
   padding: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav_wrap .content {
@@ -102,6 +106,10 @@
   font-size: large;
   border-left: #343a40;
   padding-bottom: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5rem;
+  z-index: 100;
 }
 
 .sidebar_wrap .ul {
@@ -112,4 +120,4 @@
 .sidebar_wrap .ul li {
   margin-bottom: 20px;
 }
-/*# sourceMappingURL=components.module.css.map */
+/*# sourceMappingURL=layout.module.css.map */

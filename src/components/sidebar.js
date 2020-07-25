@@ -1,5 +1,5 @@
 import React from 'react'
-import Style from './components.module.scss'
+import Style from './layout.module.scss'
 
 function Slider(props) {
     return (
