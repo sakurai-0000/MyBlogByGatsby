@@ -9,7 +9,7 @@ function Header() {
                     <Col className="mx-auto">
                         <div className={Style.siteHeading}>
                             <h1>SAKU BLOG</h1>
-                            <span>It's a piece of cake!!</span>
+                            <span>Are you ready?  I'm done</span>
                         </div>
                     </Col>
                 </Row>

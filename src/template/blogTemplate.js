@@ -6,7 +6,7 @@ import Style from '../components/layout.module.scss'
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!){
-    allContentfulBlogPost(
+    allContentfulCode(
       sort: {fields: createdDate, order: DESC},
       limit: $limit,
       skip: $skip
@@ -15,6 +15,9 @@ export const query = graphql`
         node {
           title
           slug
+          category {
+            categorySlug
+          }
           createdDate(formatString: "YYYY/MM/DD")
           thumbnail {
             fluid {
@@ -33,7 +36,7 @@ function BlogTemplate(props) {
       <div className={Style.wrap}>
         <Container>
           <Row>
-            {props.data.allContentfulBlogPost.edges.map((edge, index) => (
+            {props.data.allContentfulCode.edges.map((edge, index) => (
               <Col sm={12} >
                 <Card className="m-5">
                   <Card.Body>
