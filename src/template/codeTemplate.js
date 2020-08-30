@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
 import Profile from "../components/profile"
 import Img from "gatsby-image"
+import Archive from "../components/archive"
 
 export const query = graphql`
   query($codeId: String!, $skip: Int!, $limit: Int!){
@@ -114,6 +115,7 @@ function CodeTemplate(props) {
           </Col>
           <Col xs={3}>
             <Profile />
+            <Archive/>
           </Col>
         </Row>
       </Container>

@@ -87,13 +87,13 @@ function BlogDetail(props) {
         <ol
           className="ollist"
           style={{
-          //   backgroundColor: "#f8f9ff",
-          //   border: "dashed 1px #4865b2",
-          //   // marginLeft: "40px",
-          //   paddingTop: "20px",
-          //   paddingBottom: "28px",
-          //   paddingRight: "10px",
-          //   counterReset: "item",
+            //   backgroundColor: "#f8f9ff",
+            //   border: "dashed 1px #4865b2",
+            //   // marginLeft: "40px",
+            //   paddingTop: "20px",
+            //   paddingBottom: "28px",
+            //   paddingRight: "10px",
+            //   counterReset: "item",
           }}
         >
           {children}
@@ -172,11 +172,11 @@ function BlogDetail(props) {
         </Container>
         <Container fluid style={{ padding: "30px" }}>
           <Row >
-            <Col ></Col>
-            <Col xs={8}>
+            <Col xs={2}></Col>
+            <Col xs={7}>
               {documentToReactComponents(props.data.contentfulCode.body.json, options)}
             </Col>
-            <Col >
+            <Col xs={2}>
               <Sidebar title={props.data.contentfulCode.title} links={links} />
             </Col>
           </Row>
