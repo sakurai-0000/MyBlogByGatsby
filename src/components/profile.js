@@ -4,7 +4,7 @@ import Img from "../images/profile.jpeg"
 
 const Profile = (props) => {
     return (
-        <Container style={{ padding: "1.2em", backgroundColor: "none" }} className="mt-3">
+        <Container style={{ padding: "1.2em", backgroundColor: "#fff" }} className="mt-3">
             <Row>
                 <Col className="mb-3" style={{ textAlign: "center" }}>
                     <Image
@@ -16,15 +16,15 @@ const Profile = (props) => {
             </Row>
             <Row>
                 <Col className="mb-1" style={{ textAlign: "center" }}>
-                    <p style={{ fontWeight: "bold", fontSize: "1.5em" }}>サクライ</p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.4em" }}>サクライ</p>
                 </Col>
             </Row>
             <Row>
                 <Col style={{ textAlign: "left" }}>
                     <p style={{ margin: "0" }}>
                         Web系エンジニア2年目。前職は2次元図面の自動化ツール開発に従事。
-                        なのでAutoCADは結構得意（3次元は無理）。仕事では、
-                        言語：HTML / CSS / JS / React / Redux / Perl（はもうやりたくない）、
+                        AutoCADは結構得意（3次元は無理）。現在は、
+                        HTML / CSS / JS / React / Redux / Perl（はもうやりたくない）、
                         あたりをよく使います。趣味は海外旅行（13ヵ国）、ベトナム超行きたい。
                         ラジオ大好き（リトルトゥース）。
                     </p>

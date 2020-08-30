@@ -3,13 +3,14 @@ import Layout from "../components/layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { Container, Col, Row, Card, Button } from "react-bootstrap"
 import Profile from "../components/profile"
+import Archive from "../components/archive"
 import Img from "gatsby-image"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query{
       allContentfulCode(sort:{fields:createdDate,order: DESC},
-        limit: 3
+        limit: 5
         skip: 0
         ){
         edges{
@@ -44,7 +45,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Container fluid style={{ backgroundColor: "#EEEEEE"}} >
+      <Container fluid style={{ backgroundColor: "#EEEEEE" }} >
         <Row className="justify-content-md-center">
           <Col xs={7} className="mt-3" style={{ borderBottom: "3px solid grey" }} >
             <h1 className="m-3">Latest</h1>
@@ -58,7 +59,6 @@ const IndexPage = () => {
               <Card className="m-3">
                 <Card.Body>
                   <Card.Text>
-                    <p>作成日 {edge.node.createdDate}</p>
                     <Link to={`/code/${edge.node.category[0].categorySlug}/${edge.node.slug}`}>
                       <h3>{edge.node.title}</h3>
                     </Link>
@@ -88,6 +88,7 @@ const IndexPage = () => {
           </Col>
           <Col xs={3}>
             <Profile />
+            <Archive/>
           </Col>
         </Row>
       </Container>

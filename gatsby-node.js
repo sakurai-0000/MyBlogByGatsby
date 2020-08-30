@@ -66,7 +66,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   })
 
   res.data.allContentfulCategory.edges.forEach(({ node }) => {
-    const codePostPerpage = 3 //１ページに表示する記事の数
+    const codePostPerpage = 5 //１ページに表示する記事の数
     const codePosts = node.code.length //記事の総数
     const codePages = Math.ceil(codePosts / codePostPerpage) //記事一覧ページの総数
 

@@ -142,9 +142,11 @@ p {
         padding-left: 1em;
     }
     .ul{
-        // border-left:1px solid #ececec;
+       padding: none;
         padding-left: 1em;
         list-style-type: none;
+        border: none;
+        background-color: white;
 
     }
     .ul li{
@@ -154,6 +156,7 @@ p {
     .ul li ul{
         margin-left: 1.2em;
         padding: 0;
+        background-color: white;
     }
 }
 // ---sidebar end--- //
@@ -177,6 +180,43 @@ p {
     .category li{
         display: inline-block;
         margin-left: 1.2em;
+    }
+    ul{
+        background-color: #f8f9ff;
+        border: dashed 1px #4865b2;
+        padding-top: 30px;
+        padding-bottom: 36px;
+        padding-right: 10px;
+    }
+    ol {
+        background-color: #f8f9ff;
+        border: dashed 1px #4865b2;
+        padding-top: 20px;
+        padding-bottom: ¥28px;
+        padding-right: 10px;
+        counter-reset: item;
+    }
+    ul li p {
+        margin: 1.2em 0 0 0;
+        padding: 0;
+        // border-bottom: dashed 0.5px black;
+    }
+    ul li ul{
+        // list-style-type: none;
+        border: none;
+        margin: 0 0 0 1.2em;
+        padding: 0;
+    }
+    ul li ul li p{
+        margin: 0;
+        padding: 0;
+        // border-bottom: dashed 0.5px black;
+    }
+    p {
+        margin: 0;
+        // padding-top: 40px;
+        padding-bottom: 36px;
+        padding-right: 10px;
     }
 }
 // ---blogDetail end--- //
@@ -210,3 +250,30 @@ p {
     background: #545454;
     display: block
   }
+
+// ---archive--- //
+
+.archive_wrap{
+    font-size: large;
+    margin-top: 1.4em;
+    background-color: #fff;
+    .content{
+        text-align: center;
+    }
+    h3{
+        padding-top: 1.4em;
+        padding-bottom: 1.4em;
+    }
+    ul{
+
+    }
+    li{
+        font-size: 1.2em;
+        list-style-type: none;
+        text-align: left;
+        border-top: dashed 0.5px black;
+        padding: 1.4em 0 1.1em 1.3em;
+    }
+}
+
+// ---archive end--- //

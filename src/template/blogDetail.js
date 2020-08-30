@@ -64,7 +64,7 @@ function BlogDetail(props) {
       },
       [BLOCKS.HEADING_3]: (node, children) => (
         <h3 className="heading3">
-          <FontAwesomeIcon icon={faKey}/>
+          <FontAwesomeIcon icon={faKey} />
           {children}
         </h3>
       ),
@@ -85,14 +85,15 @@ function BlogDetail(props) {
       ),
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol
-          className="ullist"
+          className="ollist"
           style={{
-            backgroundColor: "#f8f9ff",
-            border: "dashed 1px #4865b2",
-            // marginLeft: "40px",
-            paddingTop: "40px",
-            paddingBottom: "36px",
-            paddingRight: "10px",
+          //   backgroundColor: "#f8f9ff",
+          //   border: "dashed 1px #4865b2",
+          //   // marginLeft: "40px",
+          //   paddingTop: "20px",
+          //   paddingBottom: "28px",
+          //   paddingRight: "10px",
+          //   counterReset: "item",
           }}
         >
           {children}
@@ -102,12 +103,12 @@ function BlogDetail(props) {
         <ul
           className="ullist"
           style={{
-            backgroundColor: "#f8f9ff",
-            border: "dashed 1px #4865b2",
-            // marginLeft: "40px",
-            paddingTop: "40px",
-            paddingBottom: "36px",
-            paddingRight: "10px",
+            // backgroundColor: "#f8f9ff",
+            // border: "dashed 1px #4865b2",
+            // // marginLeft: "40px",
+            // paddingTop: "40px",
+            // paddingBottom: "36px",
+            // paddingRight: "10px",
           }}
         >
           {children}
@@ -117,10 +118,10 @@ function BlogDetail(props) {
         <p
           className="paragraph"
           style={{
-            margin: "0",
-            paddingTop: "40px",
-            paddingBottom: "36px",
-            paddingRight: "10px",
+            // margin: "0",
+            // paddingTop: "40px",
+            // paddingBottom: "36px",
+            // paddingRight: "10px",
           }}
         >
           {children}

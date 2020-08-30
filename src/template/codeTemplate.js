@@ -50,7 +50,7 @@ function CodeTemplate(props) {
       <Container fluid >
         <Row className="justify-content-md-center">
           <Col xs={7} className="mt-3" style={{ borderBottom: "3px solid grey" }} >
-            <h1 className="m-3">CATEGORY {props.pageContext.codeName}</h1>
+            <h1 className="m-3">{props.pageContext.codeName}</h1>
           </Col>
           <Col xs={3} >
           </Col>
@@ -61,7 +61,6 @@ function CodeTemplate(props) {
               <Card className="m-5">
                 <Card.Body>
                   <Card.Text>
-                    <p>作成日 {edge.node.createdDate}</p>
                     <Link to={`/code/${edge.node.category[0].categorySlug}/${edge.node.slug}`}>
                       <h3>{edge.node.title}</h3>
                     </Link>
@@ -87,26 +86,31 @@ function CodeTemplate(props) {
                   </Card.Text>
                   <Button variant="outline-secondary" href={`/code/${edge.node.category[0].categorySlug}/${edge.node.slug}`}>See More</Button>
                 </Card.Body>
+                <Card.Footer className="text-muted">作成日 {edge.node.createdDate}</Card.Footer>
               </Card>
             ))}
-            {!props.pageContext.isFirst && (
-              <Link
-                to={
-                  props.pageContext.currentPage === 2
-                    ? `/code/${props.pageContext.codeSlug}/`
-                    : `/code/${props.pageContext.codeSlug}/${props.pageContext.currentPage - 1}`
-                }
-                rel='prev'>
-                <span className="m-5">前のページ </span>
-              </Link>
-            )}
-            {!props.pageContext.isLast && (
-              <Col className="text-right">
-                <Link to={`/code/${props.pageContext.codeSlug}/${props.pageContext.currentPage + 1}/`} rel='next'>
-                  <span className="m-5">次のページ</span>
-                </Link>
-              </Col>
-            )}
+            <div>
+              {!props.pageContext.isFirst && (
+                <div className="text-left" style={{display: "inline"}}>
+                  <Link
+                    to={
+                      props.pageContext.currentPage === 2
+                        ? `/code/${props.pageContext.codeSlug}/`
+                        : `/code/${props.pageContext.codeSlug}/${props.pageContext.currentPage - 1}`
+                    }
+                    rel='prev'>
+                    <span className="m-5">前のページ </span>
+                  </Link>
+                </div>
+              )}
+              {!props.pageContext.isLast && (
+                <div className="text-right" style={{display: "inline"}}>
+                  <Link to={`/code/${props.pageContext.codeSlug}/${props.pageContext.currentPage + 1}/`} rel='next'>
+                    <span className="m-5">次のページ</span>
+                  </Link>
+                </div>
+              )}
+            </div>
           </Col>
           <Col xs={3}>
             <Profile />
