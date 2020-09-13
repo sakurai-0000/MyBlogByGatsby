@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { Container, Row, Col } from 'react-bootstrap';
 import Style from './layout.module.scss'
 
@@ -25,14 +25,16 @@ const Archive = (props) => {
         <div className={Style.archive_wrap}>
             <Container className={Style.content}>
                 <Row>
-                <Col>
-                    <h3>Archive</h3>
-                    <ui>
-                        {count.map((x) =>
-                            <li> {`${Object.keys(x) + ' (' + x[Object.keys(x)] + ')'}`} </li>
-                        )}
-                    </ui>
-                </Col>
+                    <Col>
+                        <h3>Archive</h3>
+                        <ui>
+                            {count.map((x, index) => {
+                                if (x[Object.keys(x)] === 0) return false;
+                                return <li key={index}><Link to={`/${Object.keys(x)}`}>{`${Object.keys(x) + ' (' + x[Object.keys(x)] + ')'}`} </Link> </li>
+                            }
+                            )}
+                        </ui>
+                    </Col>
                 </Row>
             </Container>
         </div>

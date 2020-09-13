@@ -88,7 +88,7 @@ const IndexPage = () => {
           </Col>
           <Col xs={3}>
             <Profile />
-            <Archive/>
+            <Archive />
           </Col>
         </Row>
       </Container>
