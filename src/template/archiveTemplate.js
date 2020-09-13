@@ -50,7 +50,6 @@ export const query = graphql`
 `
 
 function ArchiveTemplate(props) {
-  console.log(props.data.allContentfulCode);
   return (
     <Layout>
       <Container fluid >
